@@ -1,0 +1,31 @@
+.Form {
+  margin: 20px auto;
+  max-width: 90vw;
+  width: 600px;
+}
+
+.Form .form-group {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.Form .control-label {
+  flex: 0 0 100%;
+}
+
+.Form .form-control {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  flex: 1 0 100px;
+}
+
+.Form .form-control-feedback {
+  right: 70px;
+}
+
+.Form .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  flex: 0 0 auto;
+}
