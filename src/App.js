@@ -15,7 +15,8 @@ class App extends Component {
       result: null,
       occurrences: 0,
       lastDatetime: null,
-      errorMessage: null
+      errorMessage: null,
+      apiResponses: []
     };
   }
 
@@ -25,6 +26,7 @@ class App extends Component {
         result: res.result,
         occurrences: res.occurrences,
         lastDatetime: res.lastDatetime,
+        apiResponses: res.apiResponses,
         errorMessage: null
       }))
       .catch((e) => this.setState({ errorMessage: e.message }));
@@ -41,7 +43,7 @@ class App extends Component {
         <p className="App-intro">1. the sum of the squares of the first <code>n</code> natural numbers<br />2. the square of the sum of the same first <code>n</code> natural numbers</p>
         <p className="App-intro">To begin, please enter a number between 1 and 100 and click <b>Submit</b>.</p>
         <Form onChange={this.onChange} />
-        <Result result={this.state.result} occurrences={this.state.occurrences} lastDatetime={this.state.lastDatetime} errorMessage={this.state.errorMessage} />
+        <Result result={this.state.result} occurrences={this.state.occurrences} lastDatetime={this.state.lastDatetime} errorMessage={this.state.errorMessage} apiResponses={this.state.apiResponses} />
       </div>
     );
   }

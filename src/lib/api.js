@@ -3,7 +3,8 @@ import { post } from './server';
 let occurrences = 0,
   lastDatetime = null,
   dateTime = null,
-  cache = {};
+  cache = {},
+  apiResponses = [];
 
 /**
  * memoize our call to the server manually, updating the occurrences and timestamp
@@ -12,7 +13,7 @@ let occurrences = 0,
  */
 function postToServer(value) {
   if (cache[value]) {
-    return Promise.resolve(cache[value]);
+    return Promise.resolve({ value: cache[value], api: null });
   } else {
     // actual api call to the server, update the occurrences and timestamp
     // update the number of times we've actually called the server
@@ -25,13 +26,15 @@ function postToServer(value) {
     return post(JSON.stringify({
       number: value,
       datetime: dateTime,
+      occurrences,
       last_datetime: lastDatetime
     }))
       .then(JSON.parse)
       .then((res) => {
         // cache the value
         cache[value] = res.value;
-        return res.value;
+        // return the value and api response
+        return { value: res.value, api: res };
       });
   }
 }
@@ -44,11 +47,19 @@ function postToServer(value) {
  */
 export function send(value) {
   return postToServer(value)
-    .then((result) => ({
-      result,
-      occurrences,
-      lastDatetime
-    })); // note: errors are caught in App.js
+    .then((result) => {
+      if (result.api) {
+        // if we got a response from the api, add it to the list
+        apiResponses.push(result.api);
+      }
+
+      return {
+        result: result.value,
+        occurrences,
+        lastDatetime,
+        apiResponses
+      };
+    }); // note: errors are caught in App.js
 }
 
 // for testing
