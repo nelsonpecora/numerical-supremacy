@@ -33,6 +33,8 @@ The square of the sum of the first ten natural numbers is:
 
 The difference between those values is `2640`, which will be displayed underneath the form.
 
+![](https://d3vv6lp55qjaqc.cloudfront.net/items/1B1I1B3b1D38300f3U3z/Image%202018-08-19%20at%203.13.06%20PM.png)
+
 ## Tests
 
 Tests are run with `npm test`. As the calculations are intended to be performed on the server-side, I've elected to split each of them into separate files to represent how their functionality might be spread across different modules.
