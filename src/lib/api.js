@@ -47,7 +47,7 @@ export function send(value) {
     .then((result) => ({
       result,
       occurrences,
-      dateTime
+      lastDatetime
     })); // note: errors are caught in App.js
 }
 
