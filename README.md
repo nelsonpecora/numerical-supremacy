@@ -33,7 +33,9 @@ The square of the sum of the first ten natural numbers is:
 
 The difference between those values is `2640`, which will be displayed underneath the form.
 
-![](https://d3vv6lp55qjaqc.cloudfront.net/items/1B1I1B3b1D38300f3U3z/Image%202018-08-19%20at%203.13.06%20PM.png)
+A list of raw returned values from the API will be displayed at the bottom, in reverse-chronological order.
+
+![](https://d3vv6lp55qjaqc.cloudfront.net/items/2t2r3m3R2n0c2h0b310k/Image%202018-08-19%20at%205.46.55%20PM.png?X-CloudApp-Visitor-Id=100841)
 
 ## Tests
 
