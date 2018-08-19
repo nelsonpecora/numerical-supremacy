@@ -1,6 +1,6 @@
 import { send, resetCount, getCount } from './api';
 
-describe('server post', () => {
+describe('api', () => {
   beforeEach(() => {
     resetCount(); // reset the count and timestamp
   });
