@@ -7,10 +7,10 @@ let occurrences = 0,
 
 /**
  * mocked server-side POST handler, extremely simplified
- * @param  {Number} value
+ * @param  {string} request stringified json
  * @return {Promise}
  */
-export function post(value) {
+export function post(request) {
   return new Promise((resolve, reject) => {
     const datetime = new Date(),
       // note: updating the occurence count and last_datetime here
@@ -28,7 +28,8 @@ export function post(value) {
     lastDatetime = datetime;
 
     try {
-      const number = parseInt(value, 10),
+      const reqObj = JSON.parse(request),
+        number = reqObj.value,
         numbers = range(1, number + 1),
         diff = squareSums(numbers) - sumSquares(numbers);
 

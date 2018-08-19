@@ -5,7 +5,8 @@ import { post } from './server';
 const postToServer = memoize(post);
 
 let occurrences = 0,
-  lastDatetime = null;
+  lastDatetime = null,
+  cache = {};
 
 /**
  * send a value to our fake server,
@@ -14,7 +15,7 @@ let occurrences = 0,
  * @return {Promise}
  */
 export function send(value) {
-  return postToServer(value)
+  return postToServer(JSON.stringify({ value })) // pretend like we're sending JSON to the server
     .then(JSON.parse)
     .then((res) => {
       // update the number of times we've actually called the server

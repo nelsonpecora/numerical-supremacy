@@ -23,7 +23,7 @@ class Form extends Component {
 
     if (this.getValidationState() === 'success') {
       // pass the number up to the app so we can do an api call and calculate the result
-      this.props.onChange(this.state.value);
+      this.props.onChange(parseInt(this.state.value, 10));
     }
   }
 
