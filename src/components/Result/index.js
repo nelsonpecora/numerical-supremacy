@@ -20,8 +20,8 @@ class Result extends Component {
             <p className="result-text">Result:</p>
             <p className="result-value">{this.props.result}</p>
             <p className="result-details">Server has been called {pluralize('time', this.props.occurrences, true)}.<br /></p>
-            { this.props.lastDatetime ? (
-              <p className="result-details">Last call was {distanceInWordsStrict(this.props.lastDatetime, new Date())} ago.</p>
+            { this.props.dateTime ? (
+              <p className="result-details">Last call was {distanceInWordsStrict(this.props.dateTime, new Date())} ago.</p>
             ) : (
               <p className="result-details">This is the first time the server has been called.</p>
             )}

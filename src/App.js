@@ -24,7 +24,7 @@ class App extends Component {
       .then((res) => this.setState({
         result: res.result,
         occurrences: res.occurrences,
-        lastDatetime: res.lastDatetime,
+        dateTime: res.dateTime,
         errorMessage: null
       }))
       .catch((e) => this.setState({ errorMessage: e.message }));
