@@ -1,0 +1,20 @@
+.Result {
+  margin: 20px auto;
+  max-width: 90vw;
+  width: 600px;
+}
+
+.Result .result-text {
+  font-size: large;
+  text-align: center;
+}
+
+.Result .result-value {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.Result .result-details {
+  font-size: medium;
+  text-align: center;
+}
